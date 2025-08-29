@@ -1,0 +1,63 @@
+---
+import Main from '../layouts/Main.astro' 
+import Comissions from '../components/comissions.astro'
+import SliderTestimonial from '../components/sliderTestimonial.astro'
+---
+
+<Main
+    route="financing"
+    title="Financiamiento">
+	<div class="bg-[url(/img/bannerFinancing.png)] bg-no-repeat bg-cover bg-center">
+        <div class="pt-60 pb-90 w-[300px] mx-auto">
+            <img src="/img/logoFooter.png" alt="" class="mx-auto"> 
+            <p class="text-center text-xl text-white ml-40 font-thin">Financiamientos</p> 
+        </div>
+	</div>  
+    <div class="container mx-auto">
+        <div class="grid grid-cols-2 my-8">
+            <div class="col-span-2 md:col-span-1 mx-8 md:mx-0">
+                <h3 class="text-[#005593] text-3xl font-thin mt-14 text-center">Gracias a</h3>
+                <div class="w-[200] sm:w-[400px] mx-auto"> 
+                    <img src="/img/logoGrande.png" class="w-full" alt="">
+                    <p class="text-[#00bfff] text-right">Financiamientos</p>
+                </div> 
+                <p class="text-[#005593] text-2xl md:text-4xl font-thin mt-4 text-center">Te ayudamos a adquirir</p>
+                <p class="text-[#005593] text-4xl md:text-6xl font-extrabold mt-4 text-center">tus productos</p>
+                <p class="text-[#00bfff] text-4xl md:text-6xl font-extrabold mt-4 text-center">preferidos</p>
+            </div>
+            <div class="col-span-2 md:col-span-1">
+                <img src="/img/imgFinancing.png" class="w-[90%] mt-10 md:mt-0 mx-auto md:mx-0 mb-10 md:mb-0" alt="">
+            </div> 
+        </div>
+    </div>
+    <div class="bg-[url(/img/bgFinancing.png)] bg-no-repeat bg-cover sm:bg-contain md:bg-cover bg-center bg-top">
+        <div class="w-[150px] md:w-[200px] ml-auto mr-4 md:mr-16 pt-4 md:pt-8">
+            <img src="/img/logoFooter.png" alt="" class="mx-auto"> 
+            <p class="text-right text-sm text-[#00bfff] font-thin">FINANCIAMIENTOS</p> 
+        </div>
+        <div class="container mx-auto mt-50 sm:mt-64 lg:mt-98 pb-30 md:pb-40"> 
+            <p class="text-center text-md md:text-xl text-white ml-0 sm:ml-44 md:ml-80 font-thin">Disfruta de este tequila</p> 
+            <p class="text-center text-md md:text-2xl text-white ml-0 sm:ml-44 md:ml-80 font-extrabold">Con ojulas de oro comestible de 24k.</p> 
+            <div class="text-center ml-0 sm:ml-44 md:ml-80">
+                <button onclick="showModal()" class="cursor-pointer mx-auto mt-4 md:mt-10 px-15 py-2 rounded-md text-white font-extrabold" style="background: linear-gradient(141deg, #3fe5ed, #005593 42%, #005593)">Comenzar</button>
+            </div>
+        </div>
+	</div>
+    <div class="bg-[url(/img/bgFinancing2.png)] bg-no-repeat bg-cover bg-center bg-top">
+        <div class="w-[150px] md:w-[200px] ml-auto mr-4 md:mr-16 pt-4 md:pt-8">
+            <img src="/img/logoFooter.png" alt="" class="mx-auto"> 
+            <p class="text-right text-sm text-[#00bfff] font-thin">FINANCIAMIENTOS</p> 
+        </div>
+        <div class="container mx-auto mt-10 pb-30 md:pb-60"> 
+            <div class="w-[200px] md:w-[300px] mx-auto mb-10 md:mb-20"> 
+                <img src="/img/diremovil.png" class=" ml-0 md:ml-44" alt="">
+            </div>
+            <p class="text-center text-xl text-white ml-0 md:ml-80 font-thin">Los mejores planes de telefonía</p> 
+            <p class="text-center text-2xl text-white ml-0 md:ml-80 font-extrabold">con cobertura nacional e internacional</p> 
+            <div class="text-center ml-0 md:ml-80">
+                <button onclick="showModal()" class="cursor-pointer mx-auto mt-4 md:mt-10 px-15 py-2 rounded-md text-white font-extrabold" style="background: linear-gradient(141deg, #3fe5ed, #005593 42%, #005593)">Comenzar</button>
+            </div>
+        </div>
+	</div>
+    <Comissions/>
+</Main>

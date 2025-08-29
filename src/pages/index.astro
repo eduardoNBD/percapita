@@ -1,0 +1,29 @@
+---
+import Main from '../layouts/Main.astro' 
+import Comissions from '../components/comissions.astro'
+---
+
+<Main
+	route="/"
+	title="Inicio">
+	<div class="bg-[url(img/bgBannerHome.jpg)] bg-no-repeat bg-cover">
+		<div class="bg-[#2271b355]">
+			<div class="container mx-auto">
+				<div class="grid grid-cols-2 pt-15 md:pt-32 pb-8">
+					<div class="col-span-2 md:col-span-1">
+						<p class="text-white pl-5 md:pl-0 text-5xl md:text-8xl font-light">Adquiere</p>
+						<p class="text-white pl-5 md:pl-0 text-5xl md:text-8xl font-bold mt-2">libertad</p>
+						<p class="text-[#00bfff] pl-5 md:pl-0 text-5xl md:text-8xl font-bold mt-2">economica</p>
+						<p class="text-white pl-5 md:pl-0 text-2xl font-bold mt-2">En menos de 24 horas</p>
+					</div>
+					<div class="mt-0 md:mt-8 col-span-2 md:col-span-1">
+						<button onclick="showModal()" class="cursor-pointer text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 rounded-lg text-xl md:text-4xl font-bold mt-8 px-30 py-2.5 text-center ml-4 mb-2">
+							Solicitar
+						</button>
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+    <Comissions/> 
+</Main>

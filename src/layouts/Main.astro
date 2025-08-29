@@ -1,0 +1,247 @@
+--- 
+const { title, route } = Astro.props;
+import '../assets/css/app.css' 
+
+const year = new Date().getFullYear();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>• {title} - Percapita</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  </head>
+  <body>  
+    <header>
+      <nav class="bg-white border-gray-200 shadow-lg">
+        <div class="flex items-center ">
+          <div class="flex flex-wrap flex-col md:flex-row items-start md:items-center gap-x-4">
+            <a href="/" class="flex space-x-3 rtl:space-x-reverse mx-2 md:mx-10">
+              <img src='img/logo.png' alt="logo" /> 
+            </a>
+            <h2 class="font-bold text-gray-500 mt-2 mx-4 md:mx-10">
+              Llámanos: 
+              <a href="tel:+523336168059" class="text-blue-900" target="_blank" rel="noopener noreferrer">33 3616-8059</a>
+            </h2>
+          </div>
+          <div class="flex-1 flex items-center justify-end">
+            <button id="buttonNavBar" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+              </svg>
+            </button>
+            <div class="hidden top-[56px] sm:top-[56px] absolute md:static w-full md:block md:w-auto justify-end" id="navbar-default">
+              <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 bg-gray-50 md:flex-row rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white items-center">
+                <li class="w-full md:w-auto">
+                  <a href="/" class={`block py-2 md:py-8 px-3 ${route == '/' ? 'text-[#005593]' : 'text-gray-900'} rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#005593] font-extrabold`}>Inicio</a>
+                </li>
+                <li class="w-full md:w-auto">
+                  <a href="about" class={`block py-2 md:py-8 px-3 ${route == 'about' ? 'text-[#005593]' : 'text-gray-900'} rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#005593] font-extrabold`}>Nosotros</a>
+                </li>
+                <li class="w-full md:w-auto">
+                  <a href="financing" class={`block py-2 md:py-8 px-3 ${route == 'financing' ? 'text-[#005593]' : 'text-gray-900'} rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#005593] font-extrabold`}>Financiamiento</a>
+                </li>
+                <li class="w-full md:w-auto">
+                  <a href="#" class={`block py-2 md:py-8 px-3 ${route == '' ? 'text-[#005593]' : 'text-gray-900'} rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#005593] font-extrabold`}>Crédito PABS</a>
+                </li>
+                <li class="w-full md:w-auto">
+                  <a href="#" class={`block py-2 md:py-8 px-3 ${route == '' ? 'text-[#005593]' : 'text-gray-900'} rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#005593] font-extrabold`}>Blog</a>
+                </li>
+                <li class="w-full md:w-auto">
+                  <a href="#" class={`hidden md:block py-2 md:py-8 px-3 ${route == '' ? 'text-[#005593]' : 'text-gray-900'} rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#005593] font-extrabold`}>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" /><path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" /></svg>
+                  </a>
+                  <a href="#" class={`block md:hidden py-2 md:py-8 px-3 ${route == '' ? 'text-[#005593]' : 'text-gray-900'} rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#005593] font-extrabold`}>Iniciar Sesión</a>
+                </li> 
+              </ul>
+            </div>
+            <button onclick="showModal()" class="cursor-pointer py-6 md:py-8 px-4 md:px-10 text-center text-gray-100 bg-[#005593] font-bold">
+              Solicitar Credito
+            </button>
+          </div>
+        </div>
+      </nav>  
+    </header>
+    <main>
+      <slot />  
+    </main> 
+    <footer class="bg-[url(img/bgFooter.png)] bg-no-repeat bg-cover py-8">
+      <div>
+        <img src="/img/logoFooter.png" class="mx-auto" alt="logo footer">
+      </div>
+      <hr class="border-1 border-white opacity-25 my-4">
+      <div class="container mx-auto">
+        <div class="px-10 lg:px-0 pt-8 grid grid-cols-4">
+          <div class="col-span-2 md:col-span-2 lg:col-span-1">
+            <h3 class="text-sky-500 font-bold text-2xl text-center lg:text-left">
+              Contacto
+            </h3>
+            <div class="flex justify-center lg:justify-start gap-4 mt-4 text-sm text-white">
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="text-sky-500"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" /></svg>
+              <a href="https://maps.app.goo.gl/hvWmTwuNVcjdDCLi6">
+                Calle Tomás V. Gómez 307 <br>
+                Ladrón de Guevara 44600  <br>
+                Guadalajara, Jal.
+              </a>
+            </div> 
+            <div class="flex justify-center lg:justify-start gap-4 mt-4 text-sm text-white">
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="text-sky-500"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" /></svg>
+              <a href="#">
+                Ures Sur 137 5 Col. <br>
+                Centro 63000. <br>
+                Tepic, Nayarit
+              </a>
+            </div> 
+            <div class="flex justify-center lg:justify-start gap-4 mt-4 text-sm text-white items-center">
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="text-sky-500"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+              <a href="mailto:contacto@percapita.mx">contacto@percapita.mx</a>
+            </div> 
+            <div class="flex justify-center lg:justify-start gap-4 mt-4 text-sm text-white items-center">
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="text-sky-500"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14z" /><path d="M11 4h2" /><path d="M12 17v.01" /></svg>
+              <a href="tel:+523336168059">33 3616-8059</a>
+            </div>
+            <div class="flex justify-center lg:justify-start gap-4 mt-4 text-sm text-white items-center">
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="text-sky-500"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg>
+              <a href="https://api.whatsapp.com/send?phone=523315206918">33 4009 4310</a>
+            </div>
+          </div> 
+          <div class="col-span-2 md:col-span-2 lg:col-span-1">
+            <h3 class="text-sky-500 font-bold text-2xl text-center lg:text-left">
+              Menu
+            </h3>
+            <ul class="text-white text-sm mt-2 text-center lg:text-left">
+              <li class="mt-2">
+                <a href="/">Inicio</a>
+              </li>
+              <li class="mt-2">
+                <a href="/about">Nosotros</a>
+              </li>
+              <li class="mt-2">
+                <a href="/financing">Financiamiento</a>
+              </li>
+              <li class="mt-2">
+                <a href="#">Credito PABS</a>
+              </li>
+              <li class="mt-2">
+                <a href="#">Blog</a>
+              </li>
+              <li class="mt-2">
+                <a href="#">Contacto</a>
+              </li>
+              <li class="mt-2">
+                <a href="#">Inicia Sesión</a>
+              </li>
+            </ul> 
+          </div>
+          <div class="col-span-2 md:col-span-2 lg:col-span-1 mt-10 lg:mt-0">
+            <h3 class="text-sky-500 font-bold text-2xl text-center lg:text-left">
+              Legal
+            </h3>
+            <ul class="text-white text-sm mt-2 text-center lg:text-left">
+              <li class="mt-2">
+                <a href="#">Terminos y Condiciones</a>
+              </li>
+              <li class="mt-2">
+                <a href="#">Aviso de privacidad</a>
+              </li>
+              <li class="mt-2">
+                <a href="#">CAT y comisiones</a>
+              </li>
+              <li class="mt-2">
+                <a href="#">Preguntas frecuentes</a>
+              </li>
+              <li class="mt-2">
+                <a href="#">Derechos de Arco</a>
+              </li> 
+            </ul> 
+          </div>
+          <div class="col-span-2 md:col-span-2 lg:col-span-1 mt-10 lg:mt-0">
+            <h3 class="text-sky-500 font-bold text-2xl text-center">
+              Siguenos
+            </h3>
+            <div class="flex gap-4 text-white mt-8 justify-center">
+              <a href="">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 2a1 1 0 0 1 .993 .883l.007 .117v4a1 1 0 0 1 -.883 .993l-.117 .007h-3v1h3a1 1 0 0 1 .991 1.131l-.02 .112l-1 4a1 1 0 0 1 -.858 .75l-.113 .007h-2v6a1 1 0 0 1 -.883 .993l-.117 .007h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-6h-2a1 1 0 0 1 -.993 -.883l-.007 -.117v-4a1 1 0 0 1 .883 -.993l.117 -.007h2v-1a6 6 0 0 1 5.775 -5.996l.225 -.004h3z" /></svg>
+              </a>
+              <a href="">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-brand-youtube"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 3a5 5 0 0 1 5 5v8a5 5 0 0 1 -5 5h-12a5 5 0 0 1 -5 -5v-8a5 5 0 0 1 5 -5zm-9 6v6a1 1 0 0 0 1.514 .857l5 -3a1 1 0 0 0 0 -1.714l-5 -3a1 1 0 0 0 -1.514 .857z" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-7">
+          <hr class="border-1 border-white opacity-25">
+          <div class="text-white mx-10 text-center md:mx-0 md:text-left px-4">
+            <h6 class="mt-4">PROBENSO GROUP S.A SOFOM E.N.R</h6>
+            <p>Calle Tomás V. Gómez 307, Ladrón de Guevara C.P., 44600. Guadalajara, Jal. Mexico</p>
+          </div>
+          <hr class="mt-4 opacity-25">
+          <div class="text-white mx-10 text-center md:mx-0 md:text-left px-4">
+            <h6 class="mt-4">Atención a clientes:</h6>
+            <p>Atención en WhatsApp: al  <a href="tel:+523346548542" class="text-white">3346548542</a>  de lunes a viernes de 9:00 a 18 horas y sábados de 9:00 a 14:00 horas.</p>
+            <p class="mt-4">
+              Atención telefónica: al  <a href="tel:+523336168059" class="txt-blanco">3336168059</a>  de lunes a viernes de 9:00 a 18 horas y sábados de 9:00 a 14:00 horas.
+            </p>
+          </div>
+          <hr class="border-1 border-white opacity-25 mt-8">
+        </div>
+      </div>
+      <div class="text-center text-white mt-6">
+        © {year} Percapita. Todos Los Derechos Reservados.
+      </div>
+    </footer>
+    <div id="popup-modal" tabindex="-1" class="hidden bg-[#00000088] overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-screen max-h-full">
+      <div class="relative p-4 w-full max-w-lg max-h-full">
+        <div class="relative bg-[#005593] rounded-lg shadow-sm">
+          <!-- Botón de cierre -->
+          <button onclick="closeModal()" type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-red-900 hover:text-gray-100 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="popup-modal">
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+            </svg>
+            <span class="sr-only">Close modal</span>
+          </button>
+          <!-- Contenido del modal -->
+          <div class="p-4 md:p-5 text-center">
+            <img src="/img/logoFooter.png" class="mx-auto w-1/2" alt="">
+            <hr class="border-1 border-white opacity-25 my-4">
+            <img src="/img/pabsLogo.png" class="mx-auto w-1/6" alt="">
+            <h3 class="text-lg font-extrabold text-gray-300 mb-3 mt-2">Tengo un título PABS</h3>
+            <p class="text-white mb-5">Tu crédito ya está pre-autorizado</p>
+            <a href="https://nueva.percapita.mx/sign-up/title" class="px-15 py-2 rounded-md text-[#005593] font-extrabold" style="background: linear-gradient(153deg,#00bfff 13%,#41e6ed 53%,#41e6ed)">Solicitar credito</a>
+            <hr class="border-1 border-white opacity-25 my-6">
+            <p class="text-white mb-2">¿Qué es un Título PABS?</p>
+            <a href="https://www.pabsmr.org/que-es-un-titulo-pabs/" class="text-white flex items-center gap-2 justify-center">
+              <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-hand-finger-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 8h8.5a1.5 1.5 0 0 1 0 3h-7.5" /><path d="M13.5 11h2a1.5 1.5 0 0 1 0 3h-2.5" /><path d="M14.5 14a1.5 1.5 0 0 1 0 3h-1.5" /><path d="M13.5 17a1.5 1.5 0 1 1 0 3h-4.5a6 6 0 0 1 -6 -6v-2v.208a6 6 0 0 1 2.7 -5.012l.3 -.196q .718 -.468 5.728 -3.286a1.5 1.5 0 0 1 2.022 .536c.44 .734 .325 1.674 -.28 2.28l-1.47 1.47" /></svg>
+              Click aqui
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script is:inline>
+      const navbar = document.querySelector('#navbar-default');
+      const buttonNavBar = document.querySelector('#buttonNavBar');
+      
+      buttonNavBar?.addEventListener('click', () => {
+         if(navbar.classList.contains('hidden')){
+          navbar.classList.remove('hidden');
+         }else{
+          navbar.classList.add('hidden');
+         }
+      });
+
+      function showModal(){
+        document.querySelector('#popup-modal')?.classList.remove('hidden');
+        document.querySelector('body')?.classList.add('overflow-hidden');
+      }
+
+      function closeModal(){
+        document.querySelector('#popup-modal')?.classList.add('hidden');
+        document.querySelector('body')?.classList.remove('overflow-hidden');
+      }
+    </script>
+  </body> 
+</html>

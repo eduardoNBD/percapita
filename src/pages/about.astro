@@ -1,0 +1,110 @@
+---
+import Main from '../layouts/Main.astro' 
+import Comissions from '../components/comissions.astro'
+import SliderTestimonial from '../components/sliderTestimonial.astro'
+---
+
+<Main
+    route="about"
+    title="Nosotros">
+	<div class="bg-[url(/img/bannerAbout.png)] bg-no-repeat bg-cover bg-center">
+        <div class="pt-40 md:pt-60 pb-60 md:pb-90 px-2 text-shadow-lg">
+            <img src="/img/logoAbout.png" alt="" class="mx-auto w-16">
+            <p class="text-center text-2xl font-bold text-white">Nosotros</p>
+            <p class="text-center text-3xl text-white mt-4 font-thin">Queremos que tengas</p>
+            <p class="text-center text-5xl text-white mt-4 font-extrabold">Libertad  <span class="text-[#00bfff]">economica</span></p>
+        </div>
+	</div> 
+    <div class="bg-[url(/img/bgNosotros.png)] bg-no-repeat bg-cover">
+        <div class="grid grid-cols-2 container mx-auto pt-0 md:pt-20">
+            <div class="mt-14 col-span-2 md:col-span-1">
+                <p class="text-center md:text-left text-4xl text-white mt-4 font-thin">Queremos que tus necesidades</p>
+                <p class="text-center md:text-left text-4xl font-extrabold text-white mt-2">dejen de ser</p>
+                <p class="text-center md:text-left text-4xl font-extrabold text-[#00bfff] mt-2">preocupaciones</p>
+                <p class="text-center md:text-left text-xl text-white font-thin mt-7">En Percapita queremos ayudarte</p> 
+                <p class="text-center md:text-left text-xl text-white font-thin">a que tus sueños y aspiraciones</p> 
+                <p class="text-center md:text-left text-xl text-white font-thin">se vuelvan metas alcanzables</p> 
+            </div>
+            <div class="col-span-2 md:col-span-1">
+                <img src="/img/imgAbout.png" class="w-[90%] mt-10 md:mt-0 mx-auto md:mx-0 mb-10 md:mb-0" alt="">
+            </div> 
+        </div>
+	</div> 
+    <div class="grid grid-cols-2">
+        <div class="bg-[url(/img/imgAbout2.png)] bg-no-repeat bg-cover py-50 md:py-90 col-span-2 md:col-span-1">
+
+        </div>
+        <div class="p-10 md:p-20 col-span-2 md:col-span-1">
+            <img src="img/logoGrande.png" class="w-[240px] mx-auto md:mx-0"  alt="">
+            <h3 class="text-[#005593] text-5xl font-thin mt-14 text-center md:text-left">El crédito</h3>
+            <h4 class="text-[#005593] text-5xl font-extrabold mt-2 text-center md:text-left">más rápido</h4>
+            <p class="text-md text-gray-600 font-thin mt-7 text-center md:text-left">Somos la institución que otorga el crédito más rápido y con los menores requisitos</p> 
+            <p class="text-md text-gray-600 font-thin mt-2 text-center md:text-left">posibles ofreciendo un servicio profesional, oportuno y personalizado.</p> 
+            <div class="text-center md:text-left mt-10">
+                <a href="https://nueva.percapita.mx/sign-up/title" class="mx-auto px-15 py-3 rounded-md text-white font-extrabold" style="background: linear-gradient(141deg, #3fe5ed, #005593 42%, #005593)">Solicitar credito</a>
+            </div>
+        </div>
+    </div>
+    <div class="bg-[url(/img/bgFamilia.png)] bg-no-repeat bg-cover bg-center bg-top pt-90 pb-20"> 
+        <div class="container mx-auto px-10 md:px-0 text-shadow-lg">
+            <p class="text-center text-3xl text-white mt-4 font-thin">Tu libertad económica</p>
+            <p class="text-center text-3xl text-white mt-4 font-extrabold">con Percapita</p> 
+            <div class="text-center mt-10">
+                <a href="https://nueva.percapita.mx/sign-up/title" class="mx-auto px-15 py-4 rounded-md text-[#005593] font-extrabold" style="background: linear-gradient(153deg,#00bfff 13%,#41e6ed 53%,#41e6ed)">Solicitar credito</a>
+            </div>
+        </div>
+    </div>
+    <div class="container mx-auto my-20">
+        <h5 class="text-center text-4xl font-thin text-[#005593]">Solo Sigue</h5>
+        <h5 class="text-center text-4xl font-extrabold text-[#005593]">4 sencillos <span class="text-[#00bfff]">pasos</span></h5>
+        <div class="grid grid-cols-4 mt-10 gap-y-8"> 
+            <div class="col-span-4 md:col-span-2 lg:col-span-1">
+                <div class="text-center bg-neutral-100 px-12 pt-10 m-5 rounded-4xl h-full shadow-md">
+                    <img src="/img/step1.png" class="mx-auto mb-2" alt="">
+                    <h6 class="text-[#00bfff] text-md mt-8">Paso 01</h6>
+                    <h6 class="text-[#005593] text-xl font-extrabold mt-3">Solicitud en línea</h6>
+                    <p class="text-md text-gray-600 mt-3">
+                        Llena el formulario en línea con tu información personal.
+                    </p>
+                </div>
+            </div>
+            <div class="col-span-4 md:col-span-2 lg:col-span-1">
+                <div class="text-center bg-neutral-100 px-12 pt-10 m-5 rounded-4xl h-full shadow-md">
+                    <img src="/img/step2.png" class="mx-auto mb-2" alt="">
+                    <h6 class="text-[#00bfff] text-md mt-8">Paso 02</h6>
+                    <h6 class="text-[#005593] text-xl font-extrabold mt-3">Confirma tu celular</h6>
+                    <p class="text-md text-gray-600 mt-3">
+                        Confirma tu cuenta con el código que recibirás en tu celular
+                    </p>
+                </div>
+            </div>
+            <div class="col-span-4 md:col-span-2 lg:col-span-1">
+                <div class="text-center bg-neutral-100 px-12 pt-10 m-5 rounded-4xl h-full shadow-md">
+                    <img src="/img/step3.png" class="mx-auto mb-2" alt="">
+                    <h6 class="text-[#00bfff] text-md mt-8">Paso 03</h6>
+                    <h6 class="text-[#005593] text-xl font-extrabold mt-3">Subes tus documentos</h6>
+                    <p class="text-md text-gray-600 mt-3">
+                        Identificación oficial y un comprobante de domicilio.
+                    </p>
+                </div>
+            </div>
+            <div class="col-span-4 md:col-span-2 lg:col-span-1">
+                <div class="text-center bg-neutral-100 px-12 pt-10 m-5 rounded-4xl h-full shadow-md">
+                    <img src="/img/step4.png" class="mx-auto mb-2 md:mb-[62px]" alt="">
+                    <h6 class="text-[#00bfff] text-md mt-8">Paso 04</h6>
+                    <h6 class="text-[#005593] text-xl font-extrabold mt-3">Tu préstamo en 24 hrs.</h6>
+                    <p class="text-md text-gray-600 mt-3">
+                        Tu dinero estará listo en menos de 24 horas.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-25">
+            <a href="https://nueva.percapita.mx/sign-up/title" class="px-22 py-4 rounded-md text-white font-extrabold text-xl" style="background: linear-gradient(141deg, #3fe5ed, #005593 42%, #005593)">Solicitar credito</a>
+        </div>
+    </div>
+    <div class="bg-[url(/img/bgSlider.png)] bg-no-repeat bg-cover py-20">
+        <SliderTestimonial/>
+    </div>
+    <Comissions/>
+</Main>
